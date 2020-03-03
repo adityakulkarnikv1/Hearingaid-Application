@@ -18,8 +18,8 @@ public class Learn_Level_One_Slide_Show extends AppCompatActivity {
     ImageView color;
     TextView color_name;
     int DELAY = 2500;
-    String [] names = {"Red", "Green", "Yellow", "Black"};
-    int[] array = {R.drawable.red, R.drawable.green, R.drawable.yellow, R.drawable.black};
+    String [] names = {"Red", "Green", "Yellow", "Black", "Blue", "orange", "purple"};
+    int[] array = {R.drawable.red, R.drawable.green, R.drawable.yellow, R.drawable.black, R.drawable.blue, R.drawable.orange, R.drawable.purple};
     private TextToSpeech textToSpeech;
 
 
@@ -42,7 +42,7 @@ public class Learn_Level_One_Slide_Show extends AppCompatActivity {
                 color.setImageResource(array[i]);
                 speak(names[i]);
                 i++;
-                if(i==4)
+                if(i==7)
                     i=0;
 
                 color_name.postDelayed(this, DELAY);
