@@ -111,10 +111,17 @@ public class Communicate extends AppCompatActivity {
         command = command.toLowerCase();
 
         if (command.contains("what")){
-            if (command.contains("your name")){
-                TextToSpeak = "My name is koko";
-                res.setText(TextToSpeak);
-                speak(TextToSpeak);
+            if (command.contains("your")){
+                if(command.contains("name")){
+                    TextToSpeak = "My name is koko";
+                    res.setText(TextToSpeak);
+                    speak(TextToSpeak);
+                }
+                if(command.contains("age")){
+                    TextToSpeak = "My age is 20";
+                    res.setText(TextToSpeak);
+                    speak(TextToSpeak);
+                }
             }
             if (command.contains("time")){
                 Date now = new Date();
@@ -123,14 +130,26 @@ public class Communicate extends AppCompatActivity {
                 res.setText(TextToSpeak);
                 speak(TextToSpeak);
             }
+
         }
         if (command.contains("how")){
-            if(command.contains("you doing")){
-                TextToSpeak = "I'm doing well. How are you.....?";
+            if(command.contains("are you ")){
+                TextToSpeak = "I'm good. How are you.....?";
                 res.setText(TextToSpeak);
                 speak(TextToSpeak);
             }
         }
+        if(command.contains("thanks")){
+            TextToSpeak = "Welcome";
+            res.setText(TextToSpeak);
+            speak(TextToSpeak);
+        }
+        if(command.contains("bye")){
+            TextToSpeak = "Good bye. Have a nice day";
+            res.setText(TextToSpeak);
+            speak(TextToSpeak);
+        }
+
     }
 
     private void initTextToSpeech() {
@@ -156,4 +175,9 @@ public class Communicate extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        textToSpeech.shutdown();
+    }
 }
