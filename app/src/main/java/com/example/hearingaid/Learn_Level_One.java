@@ -43,7 +43,12 @@ public class Learn_Level_One extends AppCompatActivity {
 
 
         //onclick listeners
-
+        slide_show_start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Learn_Level_One_Slide_Show.class));
+            }
+        });
 
 
 
