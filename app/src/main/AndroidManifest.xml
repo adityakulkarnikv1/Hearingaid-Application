@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Learn_Level_One"></activity>
+        <activity android:name=".Learn_Level_Two"></activity>
+        <activity android:name=".Learn_Level_One" />
         <activity android:name=".Communicate" />
         <activity android:name=".Learn" />
         <activity android:name=".About_App" />

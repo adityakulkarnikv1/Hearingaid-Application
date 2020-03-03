@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context=".Learn_Level_One">
-
+    tools:context=".Learn_Level_Two">
 
     <ImageView
         android:id="@+id/back_learn"
@@ -36,7 +35,7 @@
         android:layout_width="325dp"
         android:layout_height="85dp"
         android:gravity="center"
-        android:text="Get Started by Learning Colors"
+        android:text="Learn about Objects Present Around You"
         android:textColor="#000"
         android:textSize="24sp"
         app:fontFamily="monospace"
@@ -78,7 +77,7 @@
         android:layout_width="325dp"
         android:layout_height="60dp"
         android:gravity="center"
-        android:text="LEVEL - ONE"
+        android:text="LEVEL - TWO"
         android:textColor="#000"
         android:textSize="30sp"
         app:fontFamily="monospace"

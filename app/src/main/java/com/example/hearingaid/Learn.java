@@ -57,6 +57,13 @@ public class Learn extends AppCompatActivity {
             }
         });
 
+        card_two.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Learn_Level_Two.class));
+            }
+        });
+
 
     }
 }
