@@ -31,19 +31,15 @@ public class Communicate extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_communicate);
-        //back = findViewById(R.id.back);
         mic = findViewById(R.id.mic);
-        res = findViewById(R.id.res);
-        
+        res = findViewById(R.id.text_view);
+
+
+
         initTextToSpeech();
         initSpeechRecognizer();
 
-        /*back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Get_Started.class));
-            }
-        });*/
+
 
         mic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,14 +113,21 @@ public class Communicate extends AppCompatActivity {
         if (command.contains("what")){
             if (command.contains("your name")){
                 TextToSpeak = "My name is koko";
-                //res.setText(text);
+                res.setText(TextToSpeak);
                 speak(TextToSpeak);
             }
             if (command.contains("time")){
                 Date now = new Date();
                 String time = DateUtils.formatDateTime(this, now.getTime(), DateUtils.FORMAT_SHOW_TIME);
                 TextToSpeak = "The time is " + time;
-                //res.setText(text);
+                res.setText(TextToSpeak);
+                speak(TextToSpeak);
+            }
+        }
+        if (command.contains("how")){
+            if(command.contains("you doing")){
+                TextToSpeak = "I'm doing well. How are you.....?";
+                res.setText(TextToSpeak);
                 speak(TextToSpeak);
             }
         }
