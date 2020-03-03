@@ -1,21 +1,19 @@
 package com.example.hearingaid;
 
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Get_Started extends AppCompatActivity {
 
     CardView card_learn, card_communicate;
     TextView textView;
-    ImageView back;
+    //ImageView back;
     Animation text_view, comm, lear;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +22,7 @@ public class Get_Started extends AppCompatActivity {
         textView = findViewById(R.id.text_view);
         card_learn = findViewById(R.id.card_learn);
         card_communicate = findViewById(R.id.card_communicate);
-        back = findViewById(R.id.back);
+        //back = findViewById(R.id.back);
 
         //animations
         text_view = AnimationUtils.loadAnimation(this, R.anim.top_to_bottom);
@@ -52,12 +50,12 @@ public class Get_Started extends AppCompatActivity {
             }
         });
 
-        back.setOnClickListener(new View.OnClickListener() {
+        /*back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), Welcome_Screen.class));
             }
-        });
+        });*/
 
     }
 }

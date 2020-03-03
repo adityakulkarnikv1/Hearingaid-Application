@@ -5,15 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 
-public class About_App extends AppCompatActivity {
+public class Learn_Level_Three extends AppCompatActivity {
 
-    //ImageView imageView;
+    //ImageView back_to_learn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about__app);
+        setContentView(R.layout.activity_learn__level__three);
 
+        //view by id's
 
     }
 }

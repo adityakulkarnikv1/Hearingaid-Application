@@ -21,7 +21,7 @@ import java.util.Locale;
 public class Communicate extends AppCompatActivity {
 
     private TextToSpeech textToSpeech;
-    ImageView back, mic;
+    ImageView mic;
     private SpeechRecognizer speechRecognizer;
     String TextToSpeak;
     public TextView res;
@@ -31,19 +31,19 @@ public class Communicate extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_communicate);
-        back = findViewById(R.id.back);
+        //back = findViewById(R.id.back);
         mic = findViewById(R.id.mic);
         res = findViewById(R.id.res);
         
         initTextToSpeech();
         initSpeechRecognizer();
 
-        back.setOnClickListener(new View.OnClickListener() {
+        /*back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), Get_Started.class));
             }
-        });
+        });*/
 
         mic.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -15,7 +15,7 @@ public class Learn_Level_One extends AppCompatActivity {
     TextView text_learn, text_quiz;
     Animation text_top_anim, text_bottom_anim, slideShow_anim, quiz_anim;
     Button slide_show_start, quiz_start;
-    ImageView back_to_learn;
+    //ImageView back_to_learn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class Learn_Level_One extends AppCompatActivity {
         text_quiz = findViewById(R.id.text_quiz);
         slide_show_start = findViewById(R.id.button_slide_show);
         quiz_start = findViewById(R.id.button_quiz);
-        back_to_learn = findViewById(R.id.back_learn);
+        //back_to_learn = findViewById(R.id.back_learn);
 
         //animations
         text_top_anim = AnimationUtils.loadAnimation(this, R.anim.top_to_bottom);
@@ -43,12 +43,7 @@ public class Learn_Level_One extends AppCompatActivity {
 
 
         //onclick listeners
-        back_to_learn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Learn.class));
-            }
-        });
+
 
 
 
