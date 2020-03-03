@@ -12,7 +12,7 @@
         android:layout_width="283dp"
         android:layout_height="53dp"
         android:gravity="center"
-        android:text="Colors"
+        android:text="Color"
         android:textColor="#000"
         android:textSize="24sp"
         app:fontFamily="monospace"
