@@ -139,7 +139,7 @@ public class Communicate extends AppCompatActivity {
                 speak(TextToSpeak);
             }
         }
-        if(command.contains("thanks")){
+        if(command.contains("thank you")){
             TextToSpeak = "Welcome";
             res.setText(TextToSpeak);
             speak(TextToSpeak);
