@@ -11,9 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Learn_Level_One_Quiz"></activity>
+        <activity android:name=".Learn_Level_One_Slide_Show_Colors"></activity>
+        <activity android:name=".Learn_Level_One_Quiz" />
         <activity android:name=".Learn_Level_Two_Slide_Show" />
-        <activity android:name=".Learn_Level_One_Slide_Show" />
         <activity android:name=".Learn_Level_Three" />
         <activity android:name=".Learn_Level_Two" />
         <activity android:name=".Learn_Level_One" />

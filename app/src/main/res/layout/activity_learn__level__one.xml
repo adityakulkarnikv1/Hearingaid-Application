@@ -21,10 +21,10 @@
 
     <TextView
         android:id="@+id/text_learn"
-        android:layout_width="325dp"
-        android:layout_height="85dp"
+        android:layout_width="321dp"
+        android:layout_height="94dp"
         android:gravity="center"
-        android:text="Get Started by Learning Colors"
+        android:text="Get Started by Learning Colors And Shapes "
         android:textColor="#000"
         android:textSize="24sp"
         app:fontFamily="monospace"
@@ -53,10 +53,10 @@
         android:id="@+id/button_slide_show"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start "
+        android:text="Colors"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.43" />
@@ -75,5 +75,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.071" />
+
+    <Button
+        android:id="@+id/button_shapes_slide_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SHapes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.752"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.43" />
 
 </android.support.constraint.ConstraintLayout>

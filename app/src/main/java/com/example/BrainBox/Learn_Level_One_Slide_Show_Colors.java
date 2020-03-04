@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-public class Learn_Level_One_Slide_Show extends AppCompatActivity {
+public class Learn_Level_One_Slide_Show_Colors extends AppCompatActivity {
 
     ImageView color;
     TextView color_name;
@@ -27,7 +27,7 @@ public class Learn_Level_One_Slide_Show extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_learn__level__one__slide__show);
+        setContentView(R.layout.activity_learn__level__one__slide__show__colors);
 
         color = findViewById(R.id.color);
         color_name = findViewById(R.id.color_name);
