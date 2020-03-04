@@ -53,6 +53,13 @@ public class Learn_Level_One extends AppCompatActivity {
             }
         });
 
+        button_slide_show_shapes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Learn_Level_One_Slide_Show_Shapes.class));
+            }
+        });
+
 
 
     }
