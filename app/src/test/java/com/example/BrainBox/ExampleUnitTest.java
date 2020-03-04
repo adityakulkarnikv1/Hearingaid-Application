@@ -1,4 +1,4 @@
-package com.example.hearingaid;
+package com.example.BrainBox;
 
 import org.junit.Test;
 

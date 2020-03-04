@@ -1,4 +1,4 @@
-package com.example.hearingaid;
+package com.example.BrainBox;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

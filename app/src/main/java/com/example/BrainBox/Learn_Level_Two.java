@@ -1,13 +1,10 @@
-package com.example.hearingaid;
+package com.example.BrainBox;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Learn_Level_Two extends AppCompatActivity {

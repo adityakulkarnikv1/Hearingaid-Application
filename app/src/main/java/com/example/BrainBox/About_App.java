@@ -1,13 +1,19 @@
-package com.example.hearingaid;
+package com.example.BrainBox;
+
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Learn_Level_Two_Slide_Show extends AppCompatActivity {
+
+public class About_App extends AppCompatActivity {
+
+    //ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_learn__level__two__slide__show);
+        setContentView(R.layout.activity_about__app);
+
+
     }
 }

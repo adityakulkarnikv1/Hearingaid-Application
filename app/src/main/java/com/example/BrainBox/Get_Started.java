@@ -1,4 +1,4 @@
-package com.example.hearingaid;
+package com.example.BrainBox;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

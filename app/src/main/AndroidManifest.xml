@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.hearingaid">
+    package="com.example.BrainBox">
 
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
@@ -11,17 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Learn_Level_Two_Slide_Show"></activity>
-        <activity android:name=".Learn_Level_One_Slide_Show" />
-        <activity android:name=".Learn_Level_Three" />
-        <activity android:name=".Learn_Level_Two" />
-        <activity android:name=".Learn_Level_One" />
-        <activity android:name=".Communicate" />
-        <activity android:name=".Learn" />
-        <activity android:name=".About_App" />
-        <activity android:name=".Get_Started" />
-        <activity android:name=".Welcome_Screen" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.BrainBox.Learn_Level_Two_Slide_Show"></activity>
+        <activity android:name="com.example.BrainBox.Learn_Level_One_Slide_Show" />
+        <activity android:name="com.example.BrainBox.Learn_Level_Three" />
+        <activity android:name="com.example.BrainBox.Learn_Level_Two" />
+        <activity android:name="com.example.BrainBox.Learn_Level_One" />
+        <activity android:name="com.example.BrainBox.Communicate" />
+        <activity android:name="com.example.BrainBox.Learn" />
+        <activity android:name="com.example.BrainBox.About_App" />
+        <activity android:name="com.example.BrainBox.Get_Started" />
+        <activity android:name="com.example.BrainBox.Welcome_Screen" />
+        <activity android:name="com.example.BrainBox.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
