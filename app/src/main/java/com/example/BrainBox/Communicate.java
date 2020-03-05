@@ -23,7 +23,7 @@ public class Communicate extends AppCompatActivity {
     private TextToSpeech textToSpeech;
     ImageView mic;
     private SpeechRecognizer speechRecognizer;
-    String TextToSpeak;
+    String TextToSpeak, personName, personAge, personAddress;
     public TextView res;
 
 
@@ -34,6 +34,11 @@ public class Communicate extends AppCompatActivity {
         mic = findViewById(R.id.mic);
         res = findViewById(R.id.text_view);
 
+
+        Bundle bundle = getIntent().getExtras();
+        personName = bundle.getString("NameOfPerson");
+        personAge = bundle.getString("AgeOfPerson");
+        personAddress = bundle.getString("AddressOfPerson");
 
 
         initTextToSpeech();
@@ -113,12 +118,12 @@ public class Communicate extends AppCompatActivity {
         if (command.contains("what")){
             if (command.contains("your")){
                 if(command.contains("name")){
-                    TextToSpeak = "My name is koko";
+                    TextToSpeak = "My name is " + personName;
                     res.setText(TextToSpeak);
                     speak(TextToSpeak);
                 }
                 if(command.contains("age")){
-                    TextToSpeak = "My age is 20";
+                    TextToSpeak = "My age is " + personAge;
                     res.setText(TextToSpeak);
                     speak(TextToSpeak);
                 }
@@ -148,6 +153,13 @@ public class Communicate extends AppCompatActivity {
             TextToSpeak = "Good bye. Have a nice day";
             res.setText(TextToSpeak);
             speak(TextToSpeak);
+        }
+        if(command.contains("where")){
+            if(command.contains("live")){
+                TextToSpeak = personAddress;
+                res.setText(TextToSpeak);
+                speak(TextToSpeak);
+            }
         }
 
     }
