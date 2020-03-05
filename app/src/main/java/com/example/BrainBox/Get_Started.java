@@ -48,12 +48,7 @@ public class Get_Started extends AppCompatActivity {
         card_learn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(personName != null && personAge != null){
-                    startActivity(new Intent(getApplicationContext(), Learn.class));
-                }
-                else{
-                    Toast.makeText(getApplicationContext(), "Please Enter the above fields", Toast.LENGTH_SHORT).show();
-                }
+                startActivity(new Intent(getApplicationContext(), Learn.class));
             }
         });
 
