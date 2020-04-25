@@ -51,7 +51,7 @@ public class Get_Started extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Learn.class));
             }
         });
-
+        //hello world test comment
         card_communicate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
