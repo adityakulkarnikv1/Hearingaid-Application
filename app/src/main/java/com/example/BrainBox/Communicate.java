@@ -34,8 +34,7 @@ public class Communicate extends AppCompatActivity {
     String TextToSpeak, personName, personAge, personAddress, ans;
     public TextView res, test;
     public Button questions;
-    public ArrayList<String> questions_asked = new ArrayList<>();
-    public ArrayList<String> answers = new ArrayList<>();
+
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
@@ -59,8 +58,6 @@ public class Communicate extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Learn_Communication.class);
                 startActivity(intent);
-                intent.putExtra("questions_asked", questions_asked);
-                intent.putExtra("answers", answers);
             }
         });
 
@@ -149,25 +146,20 @@ public class Communicate extends AppCompatActivity {
         command = command.toLowerCase();
         test.setText(command);
 
-
-
-        questions_asked.add(command);
         if (command.contains("what")){
             if (command.contains("your")){
                 if(command.contains("name")){
                     TextToSpeak = "My name is " + personName;
                     res.setText(TextToSpeak);
                     speak(TextToSpeak);
-                    //ans = res.getText().toString();
-                    //answers.add(ans);
+
                     databaseReference.child(command).setValue(TextToSpeak);
                 }
                 if(command.contains("age")){
                     TextToSpeak = "My age is " + personAge;
                     res.setText(TextToSpeak);
                     speak(TextToSpeak);
-                    //ans = res.getText().toString();
-                    //answers.add(ans);
+
                     databaseReference.child(command).setValue(TextToSpeak);
 
                 }
@@ -178,8 +170,7 @@ public class Communicate extends AppCompatActivity {
                 TextToSpeak = "The time is " + time;
                 res.setText(TextToSpeak);
                 speak(TextToSpeak);
-                //ans = res.getText().toString();
-                //answers.add(ans);
+
                 databaseReference.child(command).setValue(TextToSpeak);
             }
 
@@ -189,8 +180,7 @@ public class Communicate extends AppCompatActivity {
                 TextToSpeak = "I'm good. How are you.....?";
                 res.setText(TextToSpeak);
                 speak(TextToSpeak);
-                //ans = res.getText().toString();
-                //answers.add(ans);
+
                 databaseReference.child(command).setValue(TextToSpeak);
             }
         }
@@ -198,16 +188,14 @@ public class Communicate extends AppCompatActivity {
             TextToSpeak = "Welcome";
             res.setText(TextToSpeak);
             speak(TextToSpeak);
-            //ans = res.getText().toString();
-            //answers.add(ans);
+
             databaseReference.child(command).setValue(TextToSpeak);
         }
         if(command.contains("bye")){
             TextToSpeak = "Good bye. Have a nice day";
             res.setText(TextToSpeak);
             speak(TextToSpeak);
-            //ans = res.getText().toString();
-            //answers.add(ans);
+
             databaseReference.child(command).setValue(TextToSpeak);
         }
         if(command.contains("where")){
@@ -215,8 +203,7 @@ public class Communicate extends AppCompatActivity {
                 TextToSpeak = personAddress;
                 res.setText(TextToSpeak);
                 speak(TextToSpeak);
-                //ans = res.getText().toString();
-                //answers.add(ans);
+
                 databaseReference.child(command).setValue(TextToSpeak);
             }
         }
