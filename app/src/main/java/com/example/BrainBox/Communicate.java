@@ -15,20 +15,30 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 public class Communicate extends AppCompatActivity {
 
     private TextToSpeech textToSpeech;
     ImageView mic;
     private SpeechRecognizer speechRecognizer;
-    String TextToSpeak, personName, personAge, personAddress;
+    String TextToSpeak, personName, personAge, personAddress, ans;
     public TextView res, test;
     public Button questions;
-    public ArrayList<String> questions_asked = new ArrayList<String>();
+    public ArrayList<String> questions_asked = new ArrayList<>();
+    public ArrayList<String> answers = new ArrayList<>();
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+
 
 
     @Override
@@ -41,13 +51,16 @@ public class Communicate extends AppCompatActivity {
         questions = findViewById(R.id.questions);
 
 
+
+
         //onClick listener
         questions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Learn_Communication.class);
                 startActivity(intent);
-                intent.putExtra("questions", questions_asked);
+                intent.putExtra("questions_asked", questions_asked);
+                intent.putExtra("answers", answers);
             }
         });
 
@@ -72,6 +85,9 @@ public class Communicate extends AppCompatActivity {
                 speechRecognizer.startListening(intent);
             }
         });
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
     }
 
     private void initSpeechRecognizer() {
@@ -132,6 +148,9 @@ public class Communicate extends AppCompatActivity {
     private void processResult(String command) {
         command = command.toLowerCase();
         test.setText(command);
+
+
+
         questions_asked.add(command);
         if (command.contains("what")){
             if (command.contains("your")){
@@ -139,11 +158,18 @@ public class Communicate extends AppCompatActivity {
                     TextToSpeak = "My name is " + personName;
                     res.setText(TextToSpeak);
                     speak(TextToSpeak);
+                    //ans = res.getText().toString();
+                    //answers.add(ans);
+                    databaseReference.child(command).setValue(TextToSpeak);
                 }
                 if(command.contains("age")){
                     TextToSpeak = "My age is " + personAge;
                     res.setText(TextToSpeak);
                     speak(TextToSpeak);
+                    //ans = res.getText().toString();
+                    //answers.add(ans);
+                    databaseReference.child(command).setValue(TextToSpeak);
+
                 }
             }
             if (command.contains("time")){
@@ -152,6 +178,9 @@ public class Communicate extends AppCompatActivity {
                 TextToSpeak = "The time is " + time;
                 res.setText(TextToSpeak);
                 speak(TextToSpeak);
+                //ans = res.getText().toString();
+                //answers.add(ans);
+                databaseReference.child(command).setValue(TextToSpeak);
             }
 
         }
@@ -160,23 +189,35 @@ public class Communicate extends AppCompatActivity {
                 TextToSpeak = "I'm good. How are you.....?";
                 res.setText(TextToSpeak);
                 speak(TextToSpeak);
+                //ans = res.getText().toString();
+                //answers.add(ans);
+                databaseReference.child(command).setValue(TextToSpeak);
             }
         }
         if(command.contains("thank you")){
             TextToSpeak = "Welcome";
             res.setText(TextToSpeak);
             speak(TextToSpeak);
+            //ans = res.getText().toString();
+            //answers.add(ans);
+            databaseReference.child(command).setValue(TextToSpeak);
         }
         if(command.contains("bye")){
             TextToSpeak = "Good bye. Have a nice day";
             res.setText(TextToSpeak);
             speak(TextToSpeak);
+            //ans = res.getText().toString();
+            //answers.add(ans);
+            databaseReference.child(command).setValue(TextToSpeak);
         }
         if(command.contains("where")){
             if(command.contains("live")){
                 TextToSpeak = personAddress;
                 res.setText(TextToSpeak);
                 speak(TextToSpeak);
+                //ans = res.getText().toString();
+                //answers.add(ans);
+                databaseReference.child(command).setValue(TextToSpeak);
             }
         }
 
