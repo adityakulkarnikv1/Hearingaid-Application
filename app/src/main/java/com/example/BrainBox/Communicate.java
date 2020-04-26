@@ -34,7 +34,7 @@ public class Communicate extends AppCompatActivity {
     String TextToSpeak, personName, personAge, personAddress, ans;
     public TextView res, test;
     public Button questions;
-
+    //comment
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
