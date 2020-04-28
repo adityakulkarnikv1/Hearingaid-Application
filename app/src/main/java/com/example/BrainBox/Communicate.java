@@ -33,7 +33,6 @@ public class Communicate extends AppCompatActivity {
     private SpeechRecognizer speechRecognizer;
     String TextToSpeak, personName, personAge, personAddress, ans;
     public TextView res, test;
-    public Button questions;
     //comment
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -46,20 +45,9 @@ public class Communicate extends AppCompatActivity {
         setContentView(R.layout.activity_communicate);
         mic = findViewById(R.id.mic);
         res = findViewById(R.id.text_view);
-        test = findViewById(R.id.test);
-        questions = findViewById(R.id.questions);
 
 
 
-
-        //onClick listener
-        questions.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Learn_Communication.class);
-                startActivity(intent);
-            }
-        });
 
 
         Bundle bundle = getIntent().getExtras();
@@ -207,7 +195,6 @@ public class Communicate extends AppCompatActivity {
                 databaseReference.child(command).setValue(TextToSpeak);
             }
         }
-
     }
 
     private void initTextToSpeech() {
