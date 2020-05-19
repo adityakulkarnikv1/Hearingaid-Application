@@ -19,7 +19,7 @@ public class Welcome_Screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome__screen);
         textView = findViewById(R.id.welcome_text);
-        button_about = findViewById(R.id.button_about);
+        //button_about = findViewById(R.id.button_about);
         button_start = findViewById(R.id.button_start);
         //line = findViewById(R.id.line);
 
@@ -27,8 +27,8 @@ public class Welcome_Screen extends AppCompatActivity {
         animation_text = AnimationUtils.loadAnimation(this, R.anim.top_to_bottom);
         textView.setAnimation(animation_text);
 
-        animation_button_about = AnimationUtils.loadAnimation(this, R.anim.right_to_left);
-        button_about.setAnimation(animation_button_about);
+        /*animation_button_about = AnimationUtils.loadAnimation(this, R.anim.right_to_left);
+        button_about.setAnimation(animation_button_about);*/
 
         animation_button_start = AnimationUtils.loadAnimation(this, R.anim.left_to_right);
         button_start.setAnimation(animation_button_start);
@@ -45,13 +45,13 @@ public class Welcome_Screen extends AppCompatActivity {
             }
         });
 
-        button_about.setOnClickListener(new View.OnClickListener() {
+        /*button_about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent about = new Intent(getApplicationContext(), About_App.class);
                 startActivity(about);
             }
-        });
+        });*/
 
     }
 }

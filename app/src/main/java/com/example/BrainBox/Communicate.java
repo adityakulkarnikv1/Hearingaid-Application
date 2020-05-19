@@ -1,11 +1,16 @@
 package com.example.BrainBox;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.speech.tts.TextToSpeech;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.DateUtils;
@@ -33,7 +38,7 @@ public class Communicate extends AppCompatActivity {
     private SpeechRecognizer speechRecognizer;
     String TextToSpeak, personName, personAge, personAddress, ans;
     public TextView res, test;
-    //comment
+    private int PERMISSION_MICROPHONE_CODE = 1;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
@@ -47,7 +52,10 @@ public class Communicate extends AppCompatActivity {
         res = findViewById(R.id.text_view);
 
 
-
+        if (!(ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.RECORD_AUDIO)
+                == PackageManager.PERMISSION_GRANTED)){
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.RECORD_AUDIO}, PERMISSION_MICROPHONE_CODE);
+        }
 
 
         Bundle bundle = getIntent().getExtras();
@@ -73,6 +81,10 @@ public class Communicate extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
+    }
+
+    private void requestMicrophonePermission() {
+        //if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.RECORD_AUDIO))
     }
 
     private void initSpeechRecognizer() {
