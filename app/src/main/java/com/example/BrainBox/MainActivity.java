@@ -8,11 +8,13 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int TIMEOUT = 1500;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        int TIMEOUT = 1500;
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
