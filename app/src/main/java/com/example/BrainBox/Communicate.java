@@ -37,8 +37,9 @@ public class Communicate extends AppCompatActivity {
     ImageView mic;
     private SpeechRecognizer speechRecognizer;
     String TextToSpeak, personName, personAge, personAddress, ans;
-    public TextView res, test;
-    private int PERMISSION_MICROPHONE_CODE = 1;
+    public TextView res;
+    public List<String> results = new ArrayList<>();
+
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
@@ -51,11 +52,8 @@ public class Communicate extends AppCompatActivity {
         mic = findViewById(R.id.mic);
         res = findViewById(R.id.text_view);
 
+        results.add("what is your name");
 
-        if (!(ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.RECORD_AUDIO)
-                == PackageManager.PERMISSION_GRANTED)){
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.RECORD_AUDIO}, PERMISSION_MICROPHONE_CODE);
-        }
 
 
         Bundle bundle = getIntent().getExtras();
@@ -83,9 +81,7 @@ public class Communicate extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference();
     }
 
-    private void requestMicrophonePermission() {
-        //if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.RECORD_AUDIO))
-    }
+
 
     private void initSpeechRecognizer() {
         if(SpeechRecognizer.isRecognitionAvailable(this)){
@@ -123,10 +119,11 @@ public class Communicate extends AppCompatActivity {
 
                 @Override
                 public void onResults(Bundle bundle) {
-                    List<String> results = bundle.getStringArrayList(
-                            SpeechRecognizer.RESULTS_RECOGNITION
-                    );
-                    processResult(results.get(0));
+                    List<String> results = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+                    if (results != null) {
+                        processResult(results.get(0));
+                    }
+
                 }
 
                 @Override
@@ -144,7 +141,7 @@ public class Communicate extends AppCompatActivity {
 
     private void processResult(String command) {
         command = command.toLowerCase();
-        test.setText(command);
+
 
         if (command.contains("what")){
             if (command.contains("your")){
@@ -225,7 +222,7 @@ public class Communicate extends AppCompatActivity {
     }
 
     private void speak(String message) {
-        if(Build.VERSION.SDK_INT >= 21){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
             textToSpeech.speak(message, textToSpeech.QUEUE_FLUSH, null, null);
         }else {
             textToSpeech.speak(message, textToSpeech.QUEUE_FLUSH, null);
