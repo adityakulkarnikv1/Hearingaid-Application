@@ -103,5 +103,10 @@ public class Learn_Communication extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        textToSpeech.shutdown();
+    }
 
 }

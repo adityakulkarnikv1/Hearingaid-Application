@@ -17,16 +17,21 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Learn_Level_Three extends AppCompatActivity {
 
-    Button questions;
+    Button level_three;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learn__level__three);
 
+        level_three = findViewById(R.id.level_three);
 
-        questions = findViewById(R.id.questions);
-
+        level_three.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Learn_Level_Three_Slide_Show.class));
+            }
+        });
 
     }
 }
