@@ -53,12 +53,7 @@ public class Learn_Level_Two extends AppCompatActivity {
             }
         });
 
-        quiz.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Question_one.class));
-            }
-        });
+
 
     }
 }

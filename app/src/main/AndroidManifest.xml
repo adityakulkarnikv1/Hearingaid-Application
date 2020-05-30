@@ -12,16 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Question_Ten"></activity>
-        <activity android:name=".Question_Nine" />
-        <activity android:name=".Question_Eight" />
-        <activity android:name=".Question_Seven" />
-        <activity android:name=".Question_Six" />
-        <activity android:name=".Question_Five" />
-        <activity android:name=".Question_Four" />
-        <activity android:name=".Question_Three" />
-        <activity android:name=".Question_Two" />
-        <activity android:name=".Question_one" />
+        <activity android:name=".Learn_Level_Three_Slide_Show"></activity>
         <activity android:name=".Quiz" />
         <activity android:name=".Learn_Communication" />
         <activity android:name=".Learn_Level_One_Slide_Show_Shapes" />

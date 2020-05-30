@@ -1,16 +1,13 @@
 package com.example.BrainBox;
 
-import android.Manifest;
-import android.content.Context;
+
 import android.content.Intent;
-import android.content.pm.PackageManager;
+
 import android.os.Build;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.speech.tts.TextToSpeech;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.DateUtils;
@@ -23,23 +20,20 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 public class Communicate extends AppCompatActivity {
 
     private TextToSpeech textToSpeech;
     ImageView mic;
     private SpeechRecognizer speechRecognizer;
-    String TextToSpeak, personName, personAge, personAddress, ans;
+    String TextToSpeak, personName, personAge, personAddress;
     public TextView res;
     public List<String> results = new ArrayList<>();
-
+    private Button questions;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
@@ -51,6 +45,7 @@ public class Communicate extends AppCompatActivity {
         setContentView(R.layout.activity_communicate);
         mic = findViewById(R.id.mic);
         res = findViewById(R.id.text_view);
+        questions = findViewById(R.id.questions);
 
         results.add("what is your name");
 
@@ -65,7 +60,12 @@ public class Communicate extends AppCompatActivity {
         initTextToSpeech();
         initSpeechRecognizer();
 
-
+        questions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Learn_Communication.class));
+            }
+        });
 
         mic.setOnClickListener(new View.OnClickListener() {
             @Override

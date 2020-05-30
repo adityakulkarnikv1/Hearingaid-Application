@@ -26,12 +26,7 @@ public class Learn_Level_Three extends AppCompatActivity {
 
 
         questions = findViewById(R.id.questions);
-        questions.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Learn_Communication.class));
-            }
-        });
+
 
     }
 }
