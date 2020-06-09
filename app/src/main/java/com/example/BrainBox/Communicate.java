@@ -33,7 +33,7 @@ public class Communicate extends AppCompatActivity {
     String TextToSpeak, personName, personAge, personAddress;
     public TextView res;
     public List<String> results = new ArrayList<>();
-    private Button questions;
+    Button questions;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
