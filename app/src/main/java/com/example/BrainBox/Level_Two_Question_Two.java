@@ -7,13 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class Level_One_Question_Eight extends AppCompatActivity {
+public class Level_Two_Question_Two extends AppCompatActivity {
 
     Button option1, option2, option3, option4, next;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level__one__question__eight);
+        setContentView(R.layout.activity_level__two__question__two);
 
         option1 = findViewById(R.id.option1);
         option2 = findViewById(R.id.option2);
@@ -25,14 +25,14 @@ public class Level_One_Question_Eight extends AppCompatActivity {
         option1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Incorrect", Toast.LENGTH_LONG).show();
             }
         });
 
         option2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Incorrect", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -53,7 +53,7 @@ public class Level_One_Question_Eight extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Learn.class));
+                startActivity(new Intent(getApplicationContext(), Level_Two_Question_Three.class));
             }
         });
     }

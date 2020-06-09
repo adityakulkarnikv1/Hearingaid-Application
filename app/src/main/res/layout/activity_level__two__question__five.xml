@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:background="@drawable/bg"
     android:layout_height="match_parent"
-    tools:context=".Level_One_Question_Seven">
+    tools:context=".Level_Two_Question_Five">
+
 
     <TextView
         android:id="@+id/textView13"
@@ -31,13 +32,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.419"
-        app:srcCompat="@drawable/triangle" />
+        app:srcCompat="@drawable/chair" />
 
     <Button
         android:id="@+id/option1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="circle"
+        android:text="chair"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.086"
@@ -49,7 +50,7 @@
         android:id="@+id/option2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="triangle"
+        android:text="football"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.913"
@@ -61,7 +62,7 @@
         android:id="@+id/option3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="rectangle"
+        android:text="book"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.086"
@@ -73,7 +74,7 @@
         android:id="@+id/option4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="square"
+        android:text="nail"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.913"
@@ -92,5 +93,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
-
 </android.support.constraint.ConstraintLayout>
