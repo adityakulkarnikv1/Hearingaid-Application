@@ -1,6 +1,9 @@
 package com.example.BrainBox;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,12 +11,17 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Welcome_Screen extends AppCompatActivity {
 
     private TextView textView;
     Animation animation_text, animation_button_about, animation_button_start, animation_line;
     Button button_about, button_start;
+
+    public int check = 0;
+    BroadcastReceiver broadcastReceiver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,8 +48,14 @@ public class Welcome_Screen extends AppCompatActivity {
         button_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent get_start = new Intent(getApplicationContext(), Get_Started.class);
-                startActivity(get_start);
+                check_MicroPhone();
+                if (check == 0){
+                    Toast.makeText(getApplicationContext(), "Connect the hardware device and try again", Toast.LENGTH_LONG).show();
+                }
+                if (check == 1){
+                    Toast.makeText(getApplicationContext(), "Successful", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getApplicationContext(), Get_Started.class));
+                }
             }
         });
 
@@ -53,5 +67,29 @@ public class Welcome_Screen extends AppCompatActivity {
             }
         });*/
 
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Get_Started.class));
+            }
+        });
+
+    }
+
+    private void check_MicroPhone() {
+        broadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                final String action =intent.getAction();
+                int iii;
+                if (Intent.ACTION_HEADSET_PLUG.equals(action)){
+                    iii = intent.getIntExtra("state", -1);
+                    if (iii == 0){check = 0;}
+                    if (iii == 1){check = 1;}
+                }
+            }
+        };
+        IntentFilter receiverFilter = new IntentFilter(Intent.ACTION_HEADSET_PLUG);
+        registerReceiver(broadcastReceiver, receiverFilter);
     }
 }
