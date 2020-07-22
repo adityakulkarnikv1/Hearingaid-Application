@@ -7,6 +7,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Learn extends AppCompatActivity {
@@ -15,6 +16,7 @@ public class Learn extends AppCompatActivity {
     TextView textView;
     //ImageView back;
     Animation anim_text, anim_card_one, anim_card_two, anim_card_three;
+    Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +25,7 @@ public class Learn extends AppCompatActivity {
         card_two = findViewById(R.id.card_two);
         card_three = findViewById(R.id.card_three);
         textView = findViewById(R.id.textView2);
+        home = findViewById(R.id.home);
         //back = findViewById(R.id.back);
 
         anim_text = AnimationUtils.loadAnimation(this, R.anim.top_to_bottom);
@@ -48,6 +51,13 @@ public class Learn extends AppCompatActivity {
                 startActivity(intent);
             }
         });*/
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Get_Started.class));
+            }
+        });
 
         card_one.setOnClickListener(new View.OnClickListener() {
             @Override
